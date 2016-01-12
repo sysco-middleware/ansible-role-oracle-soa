@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-oracle-soa
+oracle_soa_version: 12c
+oracle_soa_release: 12.2.1
