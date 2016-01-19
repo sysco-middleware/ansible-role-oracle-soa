@@ -34,12 +34,12 @@
 - name: prepare oracle inventory parameters
   template:
     src: ora_inst.loc.j2
-    dest: {{ oracle_soa_inventory_file }}
+    dest: "{{ oracle_soa_inventory_file }}"
     owner: "{{ oracle_soa_os_user }}"
     group: "{{ oracle_soa_os_group }}"
 
 - name: install soa
-  shell: java -jar {{ oracle_soa_jar }} -install -silent -invPtrLoc {{ oracle_soa_inventory_file }} -responseFile {{ oracle_soa_response_file }}
+  shell: "java -jar {{ oracle_soa_jar }} -install -silent -invPtrLoc {{ oracle_soa_inventory_file }} -responseFile {{ oracle_soa_response_file }}"
   args:
     creates: "{{ oracle_soa_oracle_home }}/oraInst.loc"
   become: yes
