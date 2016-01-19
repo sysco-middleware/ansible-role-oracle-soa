@@ -39,7 +39,7 @@
     group: "{{ oracle_soa_os_group }}"
 
 - set_fact:
-    oracle_soa_jar: fmw_{{ oracle_soa_release }}.0.0_bpm_quickstart.jar
+    oracle_soa_jar: "/tmp/fmw_{{ oracle_soa_release }}.0.0_bpm_quickstart.jar"
 
 - name: install soa
   shell: "java -jar {{ oracle_soa_jar }} -install -silent -invPtrLoc {{ oracle_soa_inventory_file }} -responseFile {{ oracle_soa_response_file }}"
