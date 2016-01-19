@@ -1,0 +1,3 @@
+---
+# tasks file for oracle-soa
+- include: install-soa.yml
