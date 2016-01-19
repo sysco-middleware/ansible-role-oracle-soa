@@ -27,7 +27,7 @@
 - name: prepare installation response file
   template:
     src: soa-install-12c.rsp.j2
-    dest: {{ oracle_soa_response_file }}
+    dest: "{{ oracle_soa_response_file }}"
     owner: "{{ oracle_soa_os_user }}"
     group: "{{ oracle_soa_os_group }}"
 
