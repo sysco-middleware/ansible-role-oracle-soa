@@ -4,40 +4,7 @@
   fail: "msg='release is not valid (supported versions: [12.2.1])'"
   when: oracle_soa_release is defined and oracle_soa_release != '12.2.1'
 
-- name: evaluate oracle soa 12c {{ oracle_soa_release }} installers
-  stat: path="{{ item.path }}"
-  register: zips_state
-  with_items: "{{ oracle_bpm_installers_12_2_1_quick }}"
-  when: oracle_bpm_release == '12.2.1'
-
-- name: validation results
-  debug:
-    var: zips_state
-
-- name: validate installation zips exist
-  fail: msg="installation zip file {{ item.item.path }} is not present"
-  when: not item.stat.exists or not item.stat.isreg
-  with_items: "{{ zips_state.results }}"
-
-- name: validate installation zips checksum
-  fail: msg="installation zip file {{ item.item.path }} is not valid"
-  when: item.stat.checksum != item.item.checksum
-  with_items: "{{ zips_state.results }}"
-
-- name: install the latest version of unzip
-  yum: name=unzip state=latest
-
-- set_fact:
-    oracle_soa_jar: "/tmp/fmw_{{ oracle_soa_release }}.0.0_wls_quick.jar"
-
-- name: "unzip installation files"
-  unarchive:
-    src: "{{ item.path }}"
-    dest: /tmp
-    creates: "{{ oracle_soa_jar }}"
-    copy: no
-  with_items: "{{ oracle_soa_installers_12_2_1_quick }}"
-  when: oracle_soa_release == '12.2.1'
+- include: prepare-installers-12c.yml
 
 - name: create group
   group: name={{ oracle_soa_os_group }} state=present
@@ -52,9 +19,27 @@
     group: "{{ oracle_soa_os_group }}"
   with_items:
     - "{{ oracle_soa_oracle_home }}"
+    - "{{ oracle_soa_inventory_directory }}"
+
+- set_fact:
+    oracle_soa_response_file: /tmp/soa-install-12c.rsp
+
+- name: prepare installation response file
+  template:
+    src: soa-install-12c.rsp.j2
+    dest: {{ oracle_soa_response_file }}
+    owner: "{{ oracle_soa_os_user }}"
+    group: "{{ oracle_soa_os_group }}"
+
+- name: prepare oracle inventory parameters
+  template:
+    src: ora_inst.loc.j2
+    dest: {{ oracle_soa_inventory_file }}
+    owner: "{{ oracle_soa_os_user }}"
+    group: "{{ oracle_soa_os_group }}"
 
 - name: install soa
-  shell: java -jar {{ oracle_soa_jar }} ORACLE_HOME={{ oracle_soa_oracle_home }}
+  shell: java -jar {{ oracle_soa_jar }} -install -silent -invPtrLoc {{ oracle_soa_inventory_file }} -responseFile {{ oracle_soa_response_file }}
   args:
     creates: "{{ oracle_soa_oracle_home }}/oraInst.loc"
   become: yes

@@ -1,8 +1,4 @@
 # Install a role from the Ansible Galaxy
-- src: jeqo.oracle-weblogic
+- src: jeqo.oracle-soa
   path: roles/
-  name: oracle-weblogic
-
-- src: jeqo.elastic-filebeat
-  path: roles/
-  name: elastic-filebeat
+  name: oracle-soa

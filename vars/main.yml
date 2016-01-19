@@ -1,2 +1,11 @@
 ---
 # vars file for oracle-soa
+
+oracle_soa_os_user: oraclefmw
+oracle_soa_os_group: ofmwinstall
+oracle_soa_oracle_home: /home/{{ oracle_soa_os_user }}/product/oracle_home
+oracle_soa_inventory_file: /home/{{ oracle_soa_os_user }}/oraInst.loc
+oracle_soa_inventory_directory: /home/{{ oracle_soa_os_user }}/ora_inventory
+
+oracle_soa_installers_12_2_1_1of2_checksum: 5cf764989004ac9a9fb8098959dd26cb9424caf7
+oracle_soa_installers_12_2_1_2of2_checksum: 8725e9fafdf0fea57d1abfb0af85cb0406041dde
