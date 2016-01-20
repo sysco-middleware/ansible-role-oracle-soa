@@ -1,8 +1,2 @@
 - include: install-soa-12c.yml
-  when: oracle_soa_version == "12c" and not oracle_soa_quick_installation_type
-
-- include: install-soa-qs-12c.yml
-  when: oracle_soa_version == "12c" and oracle_soa_quick_installation_type and not oracle_soa_includes_bpm
-
-- include: install-bpm-qs-12c.yml
-  when: oracle_soa_version == "12c" and oracle_soa_quick_installation_type and oracle_soa_includes_bpm
+  when: oracle_soa_version == "12c"

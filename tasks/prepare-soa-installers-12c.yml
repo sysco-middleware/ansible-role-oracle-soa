@@ -1,15 +1,5 @@
 ---
 #
-- set_fact:
-    installers:
-      -
-        path: "{{ oracle_soa_installers_12_2_1_1of2 }}"
-        checksum: "{{ oracle_soa_installers_12_2_1_1of2_checksum }}"
-      -
-        path: "{{ oracle_soa_installers_12_2_1_2of2 }}"
-        checksum: "{{ oracle_soa_installers_12_2_1_2of2_checksum }}"
-  when: oracle_soa_release == '12.2.1'
-
 - name: evaluate oracle soa 12c {{ oracle_soa_release }} installers
   stat: path="{{ item.path }}"
   register: zips_state
