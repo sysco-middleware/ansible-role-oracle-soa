@@ -39,10 +39,15 @@
     group: "{{ oracle_soa_os_group }}"
 
 - set_fact:
+    oracle_soa_jar: "/tmp/fmw_{{ oracle_soa_release }}.0.0_soa_quickstart.jar"
+  when: not oracle_soa_includes_bpm
+
+- set_fact:
     oracle_soa_jar: "/tmp/fmw_{{ oracle_soa_release }}.0.0_bpm_quickstart.jar"
+  when: oracle_soa_includes_bpm
 
 - name: install soa
-  shell: "java -jar {{ oracle_soa_jar }} -install -silent -invPtrLoc {{ oracle_soa_inventory_file }} -responseFile {{ oracle_soa_response_file }}"
+  shell: "java -jar {{ oracle_soa_jar }} -silent -invPtrLoc {{ oracle_soa_inventory_file }} -responseFile {{ oracle_soa_response_file }} >> /tmp/soa-installation.log"
   args:
     creates: "{{ oracle_soa_oracle_home }}/oraInst.loc"
   become: yes
