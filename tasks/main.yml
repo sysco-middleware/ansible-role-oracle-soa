@@ -1,13 +1,7 @@
 ---
 # tasks file for oracle-soa
 - include: install-soa.yml
-  tags:
-    - install
   become: yes
   become_user: root
-
-- include: create-soa-domain.yml
-  become: yes
-  become_user: "{{ oracle_soa_os_user }}"
   tags:
-    - create_domain
+    - install
