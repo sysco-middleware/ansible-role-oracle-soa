@@ -19,7 +19,7 @@
         path: "{{ oracle_soaqs_installers_12_2_1_1of2 }}"
         checksum: "{{ oracle_soaqs_installers_12_2_1_1of2_checksum }}"
       -
-        path: "{{ oracle_soaqs_installers_12_2_1_1of2 }}"
+        path: "{{ oracle_soaqs_installers_12_2_1_2of2 }}"
         checksum: "{{ oracle_soaqs_installers_12_2_1_2of2_checksum }}"
   when: oracle_soa_release == '12.2.1' and oracle_soa_quick_installation and not oracle_soa_install_bpm
 
