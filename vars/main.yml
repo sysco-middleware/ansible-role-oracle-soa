@@ -4,6 +4,8 @@
 oracle_soa_os_user: oraclefmw
 oracle_soa_os_group: ofmwinstall
 oracle_soa_oracle_home: /home/{{ oracle_soa_os_user }}/product/oracle_home
+oracle_soa_domains_home: /home/{{ oracle_soa_os_user }}/config/domains
+oracle_soa_applications_home: /home/{{ oracle_soa_os_user }}/config/apps
 oracle_soa_inventory_file: /home/{{ oracle_soa_os_user }}/oraInst.loc
 oracle_soa_inventory_directory: /home/{{ oracle_soa_os_user }}/ora_inventory
 
