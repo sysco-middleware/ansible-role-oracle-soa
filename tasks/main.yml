@@ -7,5 +7,7 @@
   become_user: root
 
 - include: create-soa-domain.yml
+  become: yes
+  become_user: "{{ oracle_weblogic_os_user }}"
   tags:
     - create_domain
