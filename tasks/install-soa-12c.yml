@@ -34,7 +34,7 @@
         checksum: "{{ oracle_bpmqs_installers_12_2_1_2of2_checksum }}"
   when: oracle_soa_release == '12.2.1' and oracle_soa_quick_installation and oracle_soa_install_bpm
 
-- include: prepare-installers-12c.yml
+- include: prepare-soa-installers-12c.yml
 
 - name: create group
   group: name={{ oracle_soa_os_group }} state=present
