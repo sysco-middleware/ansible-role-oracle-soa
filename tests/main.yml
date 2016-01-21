@@ -19,8 +19,8 @@
       oracle_soaqs_installers_12_2_1_1of2: /srv/files/fmw_12.2.1.0.0_soaqs_Disk1_1of2.zip
       oracle_soaqs_installers_12_2_1_2of2: /srv/files/fmw_12.2.1.0.0_soaqs_Disk1_2of2.zip
 
-  hosts: test03
 - name: test install bpm qs 12c
+  hosts: test03
   roles:
     - role: oracle-soa
       oracle_soa_version: 12c
