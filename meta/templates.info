@@ -1,0 +1,24 @@
+Available templates.
+Currently available templates for loading:
+Oracle B2B:12.2.1
+Oracle SOA Suite:12.2.1
+Oracle API Manager:12.2.1
+Oracle Service Bus:12.2.1
+WebLogic Advanced Web Services for JAX-RPC Extension:12.2.1
+ODSI XQuery 2004 Components:12.1.3.0
+Oracle Enterprise Scheduler Service Basic:12.2.1
+Oracle Business Activity Monitoring:12.2.1
+Oracle Enterprise Manager Plugin for ESS:12.2.1
+Oracle Enterprise Manager:12.2.1
+Oracle User Messaging Service Basic:12.2.1
+Oracle WSM Policy Manager:12.2.1.0
+Oracle RAS Session Service:12.2.1.0
+Oracle JRF SOAP/JMS Web Services:12.2.1
+Oracle Enterprise Manager-Restricted JRF:12.2.1
+Oracle JRF:12.2.1
+Oracle Restricted JRF:12.2.1
+WebLogic Coherence Cluster Extension:12.2.1
+WebLogic Advanced Web Services for JAX-WS Extension:12.2.1
+Basic WebLogic Server Domain:12.2.1
+Oracle OPSS REST Service Application:12.2.1.0
+WebLogic JAX-WS SOAP/JMS Extension:12.2.1

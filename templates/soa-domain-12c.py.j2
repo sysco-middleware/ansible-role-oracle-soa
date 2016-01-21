@@ -1,5 +1,7 @@
 # Select the template to use for creating the domain
-selectTemplate('Basic WebLogic Server Domain', '{{ oracle_soa_release }}')
+{% for template in oracle_soa_domain_templates %}
+selectTemplate('{{ template.name }}', '{{ template.version }}')
+{% endfor %}
 loadTemplates()
 
 # Set the listen address and listen port for the Administration Server
