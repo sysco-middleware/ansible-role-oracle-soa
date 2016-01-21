@@ -9,7 +9,7 @@
       oracle_soa_installers_12_2_1_1of1: /srv/files/fmw_12.2.1.0.0_soa_Disk1_1of1.zip
 
 - name: test install soa qs 12c
-  hosts: test01
+  hosts: test02
   roles:
     - role: oracle-soa
       oracle_soa_version: 12c
@@ -20,7 +20,7 @@
       oracle_soaqs_installers_12_2_1_2of2: /srv/files/fmw_12.2.1.0.0_soaqs_Disk1_2of2.zip
 
 - name: test install bpm qs 12c
-  hosts: test01
+  hosts: test03
   roles:
     - role: oracle-soa
       oracle_soa_version: 12c
