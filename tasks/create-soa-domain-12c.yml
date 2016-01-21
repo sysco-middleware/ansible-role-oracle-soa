@@ -5,6 +5,6 @@
     dest: /tmp/soa-domain-12c.py
 
 - name: create domain
-  shell: "{{ oracle_soa_oracle_home }}/oracle_common/common/bin/wlst.sh /tmp/soa-domain-12c.py -Djava.security.egd=file:/dev/urandom  >> /tmp/soa-domain-creation.log"
+  shell: "{{ oracle_soa_oracle_home }}/oracle_common/common/bin/wlst.sh /tmp/soa-domain-12c.py -Djava.security.egd=file:/dev/urandom  >> {{ oracle_soa_os_user_home }}/soa-domain-creation.log"
   args:
     creates: "{{ oracle_soa_domains_home }}/{{ oracle_soa_domain_name }}/config/config.xml"
