@@ -1,4 +1,4 @@
-- name: test install bpm qs 12c
+- name: test install soa 12c
   hosts: test01
   roles:
     - role: oracle-soa
