@@ -17,6 +17,11 @@
       oracle_soa_quick_installation: yes
       oracle_soa_install_bpm: no
       oracle_soa_qs_installers_12_1_3_1of1: /srv/files/12.1.3/fmw_12.1.3.0.0_soaqs_Disk1_1of1.zip
+    - role: oracle-wlst
+      oracle_wlst_oracle_home: "{{ oracle_soa_oracle_home }}"
+      oracle_wlst_execute: yes
+      oracle_wlst_execute_file: yes
+      oracle_wlst_execute_file_path: /vagrant/roles/osb-domain.py
 
 - name: test install bpm qs 12c (12.1.3) on centos
   hosts: test03
