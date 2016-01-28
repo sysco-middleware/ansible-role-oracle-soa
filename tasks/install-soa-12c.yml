@@ -4,7 +4,7 @@
   fail: "msg='release is not valid (supported versions: [{{ oracle_soa_12c_releases }}])'"
   when: oracle_soa_release not in oracle_soa_12c_releases
 
-- include_vars: "roles/oracle-soa/defaults/installers.{{ item }}.yml"
+- include_vars: "defaults/installers-{{ item }}.yml"
   when: oracle_soa_release == item
   with_items: "{{ oracle_soa_12c_releases }}"
 
