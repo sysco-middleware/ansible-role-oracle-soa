@@ -1,9 +1,8 @@
 ---
 #
 - name: validate oracle soa 12c release is supported
-  fail: "msg='release is not valid (supported versions: [{{ item }}])'"
-  when: oracle_soa_release is defined and oracle_soa_release != '{{ item }}'
-  with_items: "{{ oracle_soa_12c_releases }}"
+  fail: "msg='release is not valid (supported versions: [{{ oracle_soa_12c_releases }}])'"
+  when: oracle_soa_release not in {{ oracle_soa_12c_releases }}
 
 - include_vars: installers.12.2.1.yml
   when: oracle_soa_release == {{ item }}
