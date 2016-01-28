@@ -18,7 +18,9 @@ galaxy_info:
 
   galaxy_tags:
   - install
-
+  - middleware
+  - soa
+  - oracle
 dependencies:
   -
     role: jeqo.java
