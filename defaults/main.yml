@@ -6,6 +6,7 @@ oracle_soa_quick_installation: yes
 oracle_soa_install_bpm: yes
 
 oracle_soa_checksum_enabled: yes
+
 # 12.1.3
 oracle_soa_installers_12_1_3_1of1: files/fmw_12.1.3.0.0_soa_Disk1_1of2.zip
 oracle_soa_installers_12_1_3_1of1_checksum: 81b3cb740e15f3bd3349afb0b87aa692465e142e
