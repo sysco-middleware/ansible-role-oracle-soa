@@ -10,6 +10,7 @@
       oracle_soa_oracle_home: /home/jeqo/oracle/fmw/12.1.3/sysco-soa-qs
       oracle_soa_os_user: jeqo
       oracle_soa_os_group: jeqo
+      oracle_soa_jdev_command: jdev-sysco
 
 - name: test install soa 12c (12.1.3) on centos
   hosts: test01
