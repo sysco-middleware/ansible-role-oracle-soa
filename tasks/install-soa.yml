@@ -7,8 +7,6 @@
 - name: validate oracle soa is installed
   stat: path="{{ oracle_soa_oracle_home }}/soa"
   register: soa_home
-  become: yes
-  become_user: root
 
 - debug:
     msg: "oracle soa is already installed in this {{ soa_home }}"

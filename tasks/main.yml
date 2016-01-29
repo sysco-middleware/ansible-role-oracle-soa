@@ -1,11 +1,13 @@
 ---
 - include: create-os-user.yml
+  become: yes
+  become_user: root
   tags:
     - create_os_user
 
 # tasks file for oracle-soa
 - include: install-soa.yml
   become: yes
-  become_user: root
+  become_user: "{{ oracle_soa_os_user }}"
   tags:
     - install
