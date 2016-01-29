@@ -16,7 +16,7 @@
 
 - name: validate installation zips checksum
   fail: msg="installation zip file {{ item.item.path }} is not valid"
-  when: item.stat.checksum != item.item.checksum and oracle_soa_checksum_enabled
+  when: oracle_soa_checksum_enabled and item.stat.checksum != item.item.checksum
   with_items: "{{ zips.results }}"
 
 - name: install the latest version of unzip
