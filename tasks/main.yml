@@ -11,3 +11,8 @@
   become_user: "{{ oracle_soa_os_user }}"
   tags:
     - install
+
+- include: create-jdev-link.yml
+  become: yes
+  tags:
+    - create_jdev_link
