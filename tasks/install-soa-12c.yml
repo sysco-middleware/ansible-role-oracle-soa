@@ -14,8 +14,6 @@
     state: directory
     owner: "{{ oracle_soa_os_user }}"
     group: "{{ oracle_soa_os_group }}"
-  become: yes
-  become_user: "{{ oracle_soa_os_user }}"
   with_items:
     - "{{ oracle_soa_oracle_home }}"
     - "{{ oracle_soa_inventory_directory }}"
