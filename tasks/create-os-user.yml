@@ -1,0 +1,6 @@
+---
+#
+- name: create group
+  group: name={{ oracle_soa_os_group }} state=present
+- name: create user
+  user: name={{ oracle_soa_os_user }} group={{ oracle_soa_os_group }} state=present

@@ -1,4 +1,8 @@
 ---
+- include: create-os-user.yml
+  tags:
+    - create_os_user
+
 # tasks file for oracle-soa
 - include: install-soa.yml
   become: yes
