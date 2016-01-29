@@ -31,6 +31,7 @@
     owner: "{{ oracle_soa_os_user }}"
     group: "{{ oracle_soa_os_group }}"
   become: yes
+  become_user: root
 
 - name: install soa
   shell: "java -jar {{ oracle_soa_jar }} -silent -responseFile {{ oracle_soa_response_file }} >> /tmp/soa-installation.log"
