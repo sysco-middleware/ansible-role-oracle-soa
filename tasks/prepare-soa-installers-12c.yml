@@ -1,7 +1,7 @@
 ---
 #
 - name: evaluate oracle soa 12c {{ oracle_soa_release }} installers
-  stat: path="{{ item.path }}"
+  stat: path="{{ item.path }}" get_checksum=yes
   register: zips
   with_items: "{{ installers }}"
 
