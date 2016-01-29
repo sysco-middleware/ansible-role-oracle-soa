@@ -4,10 +4,6 @@
   fail: "msg='release is not valid (supported versions: [{{ oracle_soa_12c_releases }}])'"
   when: oracle_soa_release not in oracle_soa_12c_releases
 
-- include: define-soa-installers-12c.yml
-
-- include: prepare-soa-installers-12c.yml
-
 - name: prepare installation directories
   file:
     path: "{{ item }}"
