@@ -1,9 +1,13 @@
 ---
 - include: prepare-os.yml
   become: yes
-  become_user: root
   tags:
     - prepare_os
+
+- include: prepare-installers.yml
+  become: yes
+  tags:
+    - prepare_installers
 
 # tasks file for oracle-soa
 - include: install-soa.yml
