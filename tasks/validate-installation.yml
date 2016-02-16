@@ -5,7 +5,7 @@
   register: soa_home
 
 - debug:
-    msg: "oracle soa is already installed in this {{ soa_home }}"
+    msg: "oracle soa is already installed in this {{ oracle_soa_oracle_home }}"
   when: soa_home.stat.exists
 
 - set_fact:
