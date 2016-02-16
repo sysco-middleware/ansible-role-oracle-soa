@@ -1,18 +1,24 @@
 ---
+# tasks file for oracle-soa
 - include: prepare-os.yml
   become: yes
   tags:
     - prepare_os
 
+- include: validate-installation.yml
+  become: yes
+  become_user: "{{ oracle_soa_os_user }}"
+
 - include: prepare-installers.yml
   become: yes
+  when: not oracle_soa_already_installed
   tags:
     - prepare_installers
 
-# tasks file for oracle-soa
 - include: install-soa.yml
   become: yes
   become_user: "{{ oracle_soa_os_user }}"
+  when: not oracle_soa_already_installed
   tags:
     - install
 
