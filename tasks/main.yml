@@ -11,7 +11,7 @@
   tags:
     - install
 
-- include: install-soa.yml
+- include: install.yml
   become: yes
   become_user: "{{ oracle_soa_os_user }}"
   when: not oracle_soa_already_installed
