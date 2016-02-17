@@ -4,5 +4,5 @@
   fail: "msg='version is not valid (supported versions: [12c])'"
   when: oracle_soa_version is defined and oracle_soa_version != "12c"
 
-- include: 12c/install-soa-12c.yml
+- include: install-soa-12c.yml
   when: not soa_home.stat.exists and oracle_soa_version == "12c"

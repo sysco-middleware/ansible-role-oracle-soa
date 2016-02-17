@@ -1,5 +1,7 @@
 ---
 # tasks file for oracle-soa
+- include: set-vars.yml
+
 - include: prepare.yml
   become: yes
   tags:
