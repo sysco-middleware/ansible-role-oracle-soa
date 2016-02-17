@@ -1,4 +1,0 @@
----
-#
-- include: prepare-installers-12c.yml
-  when: oracle_soa_version == "12c"
