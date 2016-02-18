@@ -4,4 +4,4 @@
   fail: "msg='version is not valid (supported versions: [12c])'"
   when: oracle_soa_version is defined and oracle_soa_version != "12c"
 
-- include: "install-soa-{{ oracle_soa_version }}.yml"
+- include: "install-{{ oracle_soa_version }}.yml"
