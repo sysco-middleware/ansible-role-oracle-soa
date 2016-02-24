@@ -1,21 +1,19 @@
 ---
 # tasks file for oracle-soa
-- include: prepare-os.yml
+- include: set-vars.yml
+
+- include: prepare.yml
   become: yes
   tags:
-    - prepare_os
+    - prepare
 
-- include: validate-installation.yml
+- include: validate.yml
   become: yes
   become_user: "{{ oracle_soa_os_user }}"
-
-- include: prepare-installers.yml
-  become: yes
-  when: not oracle_soa_already_installed
   tags:
-    - prepare_installers
+    - install
 
-- include: install-soa.yml
+- include: install.yml
   become: yes
   become_user: "{{ oracle_soa_os_user }}"
   when: not oracle_soa_already_installed
@@ -25,4 +23,10 @@
 - include: create-jdev-link.yml
   become: yes
   tags:
-    - create_jdev_link
+    - configure
+
+- include: fix-wlst-securerandom.yml
+  become: yes
+  become_user: "{{ oracle_soa_os_user }}"
+  tags:
+    - configure
