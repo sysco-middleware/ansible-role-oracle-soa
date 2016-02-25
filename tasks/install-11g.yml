@@ -10,7 +10,7 @@
 
 - name: prepare installation response file
   template:
-    src: install-soa-12c.rsp.j2
+    src: install-soa-11g.rsp.j2
     dest: "{{ oracle_soa_response_file }}"
 
 - name: install soa

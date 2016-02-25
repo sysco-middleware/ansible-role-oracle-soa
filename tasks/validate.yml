@@ -1,7 +1,19 @@
 ---
 #
+- name: validate oracle soa version is supported
+  fail: "msg='version is not valid (supported versions: [12c or 11g])'"
+  when: oracle_soa_version != "12c" or oracle_soa_version != "11g"
+
+- name: validate oracle soa 12c release is supported
+  fail: "msg='version is not valid (supported versions: [12.2.1])'"
+  when: oracle_soa_version == "12c" and oracle_soa_release != "12.2.1"
+
+- name: validate oracle soa 11g release is supported
+  fail: "msg='version is not valid (supported versions: [11.1.1.7])'"
+  when: oracle_soa_version == "11g" and oracle_soa_release != "11.1.1.7"
+
 - name: validate oracle soa is installed
-  stat: path="{{ oracle_soa_oracle_home }}/soa"
+  stat: path="{{ oracle_soa_soa_home }}"
   register: soa_home
 
 - debug:

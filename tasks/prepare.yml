@@ -1,27 +1,12 @@
 ---
 #
 - name: create group
-  group: name={{ oracle_soa_os_group }} state=present
+  group: name={{ oracle_soa_group }} state=present
+
 - name: create user
-  user: name={{ oracle_soa_os_user }} group={{ oracle_soa_os_group }} state=present
+  user: name={{ oracle_soa_user }} group={{ oracle_soa_group }} state=present
 
-- name: install the latest version of unzip
-  yum: name=unzip state=latest
-
-- name: evaluate oracle soa {{ oracle_soa_release }} installers
-  stat: path="{{ item.path }}"
-  register: zips
-  with_items: "{{ installers }}"
-
-- name: validation zips results
-  debug:
-    var: zips
-
-- name: validate installation zips exist
-  fail: msg="installation zip file {{ item.item.path }} is not present"
-  when: not item.stat.exists or not item.stat.isreg
-  with_items: "{{ zips.results }}"
-
-- name: "unzip installation files"
-  unarchive: src="{{ item.path }}" dest=/tmp copy=no
-  with_items: "{{ installers }}"
+- name: prepare oracle inventory parameters
+  template:
+    src: ora_inst.loc.j2
+    dest: "/etc/oraInst.loc"
