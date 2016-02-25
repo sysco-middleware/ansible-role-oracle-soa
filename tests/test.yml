@@ -80,4 +80,4 @@
     - role: oracle-soa
       oracle_soa_version: 11g
       oracle_soa_release: 11.1.1.7
-      oracle_soa_jar: /srv/files/11.1.1/
+      oracle_soa_jar: /srv/files/11.1.1/ofm_soa_generic_11.1.1.7.0/Disk1/runInstaller
