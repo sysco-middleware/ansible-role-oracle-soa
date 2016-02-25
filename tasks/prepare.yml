@@ -2,13 +2,13 @@
 #
 - name: create group
   group:
-    name: {{ oracle_soa_group }}
+    name: "{{ oracle_soa_group }}"
     state: present
 
 - name: create user
   user:
-    name: {{ oracle_soa_user }}
-    group: {{ oracle_soa_group }}
+    name: "{{ oracle_soa_user }}"
+    group: "{{ oracle_soa_group }}"
     createhome: yes
     home: "{{ oracle_soa_user_home }}"
     state: present
