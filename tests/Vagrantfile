@@ -5,15 +5,15 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 Vagrant.configure(2) do |config|
   config.vm.synced_folder "/home/jeqo/oracle/fmw/installers/", "/srv/files"
 
-  config.vm.provider :virtualbox do |vb|
+  config.vm.provider "virtualbox" do |vb|
     vb.cpus = 1
     vb.memory = "2048"
   end
 
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "test.yml"
-    ansible.galaxy_role_file = "roles.yml"
-  end
+  #config.vm.provision "ansible" do |ansible|
+  #  ansible.playbook = "test.yml"
+  #  ansible.galaxy_role_file = "roles.yml"
+  #end
 
   config.vm.define "test01" do |node|
     node.vm.box = "jeqo/oracle-jdk-8-centos7"
