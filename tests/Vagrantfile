@@ -40,7 +40,6 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.define "test07" do |node|
-    node.vm.box = "jeqo/oracle-weblogic-11g-centos7"
-    node.vm.box_url = "file:///home/jeqo/dev/jeqo/packer-oracle-weblogic/build/vagrant.box"
+    node.vm.box = "syscomiddleware/oracle-weblogic-11g-centos7"
   end
 end
