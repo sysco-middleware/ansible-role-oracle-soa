@@ -5,7 +5,7 @@
 
 - include: prepare.yml
   become: yes
-  when: not oracle_soa_already_installed and oracle_soa_is_quickstart
+  when: not oracle_soa_already_installed and oracle_soa_quick_installation
 
 - include: "install-{{ oracle_soa_version }}.yml"
   become: yes
