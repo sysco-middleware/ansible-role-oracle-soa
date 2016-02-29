@@ -1,7 +1,11 @@
 ---
 #
+- name: validate oracle soa version is supported
+  fail: "msg='version is not valid (supported versions: [12c or 11g])'"
+  when: oracle_soa_version != "12c" and oracle_soa_version != "11g"
+
 - name: validate oracle soa is installed
-  stat: path="{{ oracle_soa_oracle_home }}/soa"
+  stat: path="{{ oracle_soa_soa_home }}"
   register: soa_home
 
 - debug:

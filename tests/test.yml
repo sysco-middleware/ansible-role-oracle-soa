@@ -73,3 +73,12 @@
       oracle_soa_install_bpm: yes
       oracle_bpm_qs_installers_12_2_1_1of2: /srv/files/12.2.1/fmw_12.2.1.0.0_bpmqs_Disk1_1of2.zip
       oracle_bpm_qs_installers_12_2_1_2of2: /srv/files/12.2.1/fmw_12.2.1.0.0_bpmqs_Disk1_2of2.zip
+
+- name: test install soa 11g (11.1.1.7) on centos
+  hosts: test07
+  roles:
+    - role: oracle-soa
+      oracle_soa_version: 11g
+      oracle_soa_release: 11.1.1.7
+      oracle_soa_is_quickstart: false
+      oracle_soa_installer: /srv/files/11.1.1/ofm_soa_generic_11.1.1.7.0/Disk1/runInstaller
