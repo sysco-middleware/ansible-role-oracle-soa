@@ -1,13 +1,5 @@
 ---
 #
-- name: prepare installation directories
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - "{{ oracle_soa_oracle_home }}"
-    - "{{ oracle_soa_inventory_directory }}"
-
 - name: prepare installation response file
   template:
     src: install-soa-11g.rsp.j2
