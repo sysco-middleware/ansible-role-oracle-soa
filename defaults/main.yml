@@ -2,4 +2,6 @@
 # defaults file for oracle-soa
 oracle_soa_version: 12c # 11g
 oracle_soa_quick_installation: yes
-oracle_soa_installer: path.jar
+oracle_soa_installer: /srv/files/path.jar
+
+oracle_soa_jdev_command: jdev
