@@ -9,8 +9,6 @@
   user:
     name: "{{ oracle_soa_user }}"
     group: "{{ oracle_soa_group }}"
-    createhome: yes
-    home: "{{ oracle_soa_user_home }}"
     state: present
 
 - name: prepare oracle inventory parameters
@@ -25,5 +23,6 @@
     owner: "{{ oracle_soa_user }}"
     group: "{{ oracle_soa_group }}"
   with_items:
+    - "{{ oracle_soa_oracle_base }}"
     - "{{ oracle_soa_oracle_home }}"
     - "{{ oracle_soa_inventory_directory }}"
