@@ -2,6 +2,7 @@
 # tasks file for oracle-soa
 - include: validate.yml
   become: yes
+  when: not oracle_soa_already_installed
 
 - include: prepare.yml
   become: yes
