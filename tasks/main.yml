@@ -19,3 +19,6 @@
 - include: "fix-wlst-securerandom-{{ oracle_soa_version }}.yml"
   become: yes
   become_user: "{{ oracle_soa_user }}"
+
+- include: clean.yml
+  become: yes
