@@ -6,3 +6,10 @@
   with_items:
     - /tmp
     - /var/tmp
+
+- file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /tmp
+    - /var/tmp
